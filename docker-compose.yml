@@ -1,0 +1,26 @@
+services:
+  mongodb:
+    container_name: mongodb-7
+    image: docker.io/bitnami/mongodb:7.0.15-debian-12-r2
+    restart: always
+    volumes:
+      - data:/bitnami/mongodb
+    environment:
+      MONGODB_REPLICA_SET_MODE: primary
+      MONGODB_REPLICA_SET_NAME: rs0
+      MONGODB_PORT_NUMBER: 27017
+      MONGODB_INITIAL_PRIMARY_HOST: mongodb
+      MONGODB_INITIAL_PRIMARY_PORT_NUMBER: 27017
+      MONGODB_ADVERTISED_HOSTNAME: mongodb
+      MONGODB_ENABLE_JOURNAL: true
+      ALLOW_EMPTY_PASSWORD: yes
+    ports:
+      - 27017:27017
+  
+volumes:
+  data:
+
+networks:
+  default:
+    external: true
+    name: base
