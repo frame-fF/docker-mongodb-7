@@ -14,6 +14,7 @@ services:
       MONGODB_ADVERTISED_HOSTNAME: mongodb
       MONGODB_ENABLE_JOURNAL: true
       ALLOW_EMPTY_PASSWORD: yes
+      BITNAMI_DEBUG: true 
     ports:
       - 27017:27017
   
