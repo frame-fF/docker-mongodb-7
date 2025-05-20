@@ -4,7 +4,7 @@ services:
     image: docker.io/bitnami/mongodb:7.0.15-debian-12-r2
     restart: always
     volumes:
-      - data:/bitnami/mongodb
+      - data-test:/bitnami/mongodb
     environment:
       MONGODB_REPLICA_SET_MODE: primary
       MONGODB_REPLICA_SET_NAME: rs0
